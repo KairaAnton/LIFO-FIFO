@@ -1,6 +1,6 @@
 "use strict";
 
-import { ListNode, LinkedList, LinkedListIterator } from "./LinkedList.js";
+import { LinkedList, LinkedListIterator, ListNode } from "./LinkedList.js";
 import { Stack } from './Stack.js';
 
 function checkBraces(string) {
@@ -13,12 +13,12 @@ function checkBraces(string) {
     return false;
   }
   for (const brace of string) {
-    
+
     switch (brace) {
 
       case "(":
         roundBrackets.push(brace);
-      break;
+        break;
 
       case ")":
         if (roundBrackets.isEmpty) {
@@ -59,9 +59,27 @@ console.log(checkBraces("{{}}[][][]()()"))
 
 ////////////////////////////////////////////////////
 
+const list = new LinkedList("dytfuy", "htdtyf", "jhdytj", "yutfyj", "jgfkjhu");
+
+console.dir(list);
+
+////////////////////////////////////////////////////
 
 
+const enterString = prompt("enter integers", "1234567890");
 
-const list = new LinkedList("dytfuy","htdtyf","jhdytj");
 
-console.log(list);
+function noRepidesInRow(string){
+
+  const listString = new LinkedList();
+
+for (const i of string) {
+  if (string[i] !== string[i - 1]) {
+    listString.addNode(+i);
+  }
+}
+return listString;
+}
+console.log(noRepidesInRow(enterString));
+
+
