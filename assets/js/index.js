@@ -65,7 +65,6 @@ console.dir(list);
 
 ////////////////////////////////////////////////////
 
-
 const enterString = prompt("enter integers", "1234567890");
 
 
@@ -73,7 +72,7 @@ function noRepidesInRow(string){
 
   const listString = new LinkedList();
 
-for (const i of string) {
+for (let i = 0;i<string.length;i++) {
   if (string[i] !== string[i - 1]) {
     listString.addNode(+i);
   }
@@ -81,5 +80,30 @@ for (const i of string) {
 return listString;
 }
 console.log(noRepidesInRow(enterString));
+
+
+
+
+////////// DOM  /////////////////
+
+
+
+const alertInput = document.getElementById("alertInput") 
+const buttonClick = document.getElementById("buttonClick")
+alertInput.addEventListener("keypress", buttonClickHandler);
+
+function buttonClickHandler(event){
+  event.removeEventListener();
+    console.log(alertInput.value);
+
+}
+
+buttonClick.addEventListener("click", clickButton)
+
+function clickButton(){
+    
+    buttonClick.value = alertInput.value;
+
+}
 
 
